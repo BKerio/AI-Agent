@@ -3,3 +3,5 @@ uvicorn
 python-dotenv
 httpx
 google-genai
+playwright
+beautifulsoup4

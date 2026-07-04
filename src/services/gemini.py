@@ -1,16 +1,15 @@
-from google import genai
-from src.config import GEMINI_API_KEY, GEMINI_MODEL
+from src.services.memory import get_or_create_chat
 
-# Initialize the new genai Client
-client = genai.Client(api_key=GEMINI_API_KEY)
-
-async def generate_response(user_input: str) -> str:
+async def generate_response(user_input: str, user_phone: str) -> str:
+    """
+    Generates a response by passing the input to the user's specific chat session.
+    The SDK handles the orchestration (calling the tools and feeding back the result).
+    """
+    chat = get_or_create_chat(user_phone)
+    
     try:
-        # Generate content using the new SDK
-        response = client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=user_input
-        )
+        # send_message handles the function calls automatically
+        response = await chat.send_message(user_input)
         return response.text
     except Exception as e:
         print(f"Gemini API Error: {e}")

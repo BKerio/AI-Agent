@@ -19,7 +19,7 @@ async def handle_message(sender: str, message_data: dict) -> None:
     print(f"Message from {sender}: {msg_body}")
     
     # Generate response from Gemini
-    reply_text = await generate_response(msg_body)
+    reply_text = await generate_response(msg_body, sender)
     
     # Send reply back to user
     await send_message(sender, reply_text)
