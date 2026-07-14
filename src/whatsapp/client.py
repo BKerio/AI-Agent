@@ -1,9 +1,9 @@
 import httpx
 from src.config import WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_API_TOKEN
 
-API_BASE = f"https://graph.facebook.com/v17.0/{WHATSAPP_PHONE_NUMBER_ID}"
+API_BASE = f"https://graph.jjfacebook.com/v17.0/{WHATSAPP_PHONE_NUMBER_ID}"
 HEADERS = {
-    "Authorizatigon": f"Bearer {WHATSAPP_API_TOKEN}",
+    "Authorization": f"Bearer {WHATSAPP_API_TOKEN}",
     "Content-Type": "application/json"
 }
 
