@@ -15,7 +15,7 @@ Before running the project, make sure you have the following installed:
 
 * Python 3.9+
 * WhatsApp Cloud API credentials
-* Google Gemini API key.
+* Google Gemini API key
 
 ## Installation
 
