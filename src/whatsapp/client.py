@@ -4,7 +4,7 @@ from src.config import WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_API_TOKEN
 API_BASE = f"https://graph.facebook.com/v17.0/{WHATSAPP_PHONE_NUMBER_ID}"
 HEADERS = {
     "Authorization": f"Bearer {WHATSAPP_API_TOKEN}",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json"nn
 }
 
 async def send_message(to: str, message: str) -> None:
